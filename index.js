@@ -8,6 +8,9 @@ const cors = require('cors')
 // import bodyParser
 const bodyParser = require('body-parser')
 
+// import router 
+const router = require('./routes')
+
 // init app
 const app = exspress()
 
@@ -28,6 +31,9 @@ const port = 3000 ;
 app.get('/', (req, res) => {
     res.send('Hello World')
 })
+
+// define route
+app.use('/api', router);
 
 // start server
 app.listen(port, () => console.log(`Server Started on port ${port}`))
